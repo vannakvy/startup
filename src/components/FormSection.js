@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { db } from '../firebase';
 import { CircularProgress} from 'react-cssfx-loading/lib'
@@ -63,6 +63,7 @@ const Loading = styled.h3`
 const ForqSection = ({success, setSuccess,loading, setLoading}) => {
 
     const newCityRef = doc(collection(db, "customers"));
+    const newCityRef2 = doc(collection(db, "cusNumbers"));
 
     const [contact, setContact] = useState('');
     const [name, setName] = useState('');
@@ -82,6 +83,25 @@ const  addData = async()=>{
         alert(e.message);
     }
 }
+
+const  addData2 = async()=>{
+    try{
+       
+        await setDoc(newCityRef2,{
+            name: "arrive",
+            contact: "arrive"
+        })
+       
+       
+        
+    }catch(e){
+        console.log(e.message);
+    }
+}
+
+useEffect(()=>{
+    addData2();
+},[])
 
     const handelSubmit = (e) => {
         e.preventDefault();
