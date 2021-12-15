@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import TopSection from "./components/TopSection";
+import FormSection from "./components/FormSection";
+import styled from "styled-components";
+import { useState } from "react";
+import { CircularProgress } from "react-cssfx-loading/lib";
+
+
+
+const TopSectionContainer = styled.div`
+display: flex;
+flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+`
 
 function App() {
+  const [success, setSuccess] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TopSectionContainer>
+      <TopSection success={success} setSuccess={setSuccess} />
+      <FormSection success={success} setSuccess={setSuccess} />
+    </TopSectionContainer>
   );
-}
+  }
 
 export default App;
