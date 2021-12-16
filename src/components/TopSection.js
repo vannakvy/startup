@@ -25,6 +25,7 @@ const QuestionTitle = styled.h1`
     font-size: 1rem;
     color: purple;
     text-transform: capitalize;
+    font-family: 'Siemreap';
 `
 
 
@@ -34,7 +35,7 @@ const TopSection = ({success, setSuccess}) => {
         <CommingSoon>Comming Soon</CommingSoon>
         <Hypnosis color="green" style={{marginLeft:'auto',marginRight:'auto'}}  width="80px" height="80px" duration="2s"/>
         {!success &&<QuestionTitle>
-            Would You like to get notified when we are ready? Drop your contact here.
+            បញ្ចូលអ៊ីមែល ឬលេខទូរស័ព្ធរបស់អ្នកដើម្បីទទួលបានការបញ្ជូនសាររបស់យើង​ ពេលយើងរួចរាល់។
         </QuestionTitle>
 }
    </>

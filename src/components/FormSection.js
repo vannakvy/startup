@@ -27,9 +27,11 @@ const SubmitBtn = styled.button`
     border-radius: 5px;
     height: 45px;
     font-size: 1.2rem;
+    font-family: 'Siemreap';
     &:hover{
         background: purple;
         cursor: pointer;
+     
 
     }
   
@@ -46,18 +48,21 @@ const TextInput = styled.input`
     font-size: 1rem;
     height: 35px;
     margin-bottom: 10px;
+    font-family: 'Siemreap';
 
 `
 
 const Thanks = styled.h1`
     text-align: center;
     color: #fff;
+    font-family: 'Siemreap';
   
 `
 const Loading = styled.h3`
     font-size: 2rem;
     color: #fff;
     font-weight: bold;
+    font-family: 'Siemreap';
 `
 
 const ForqSection = ({success, setSuccess,loading, setLoading}) => {
@@ -67,6 +72,7 @@ const ForqSection = ({success, setSuccess,loading, setLoading}) => {
 
     const [contact, setContact] = useState('');
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
    
     
 const  addData = async()=>{
@@ -74,7 +80,9 @@ const  addData = async()=>{
        
         await setDoc(newCityRef,{
             name: name,
-            contact: contact
+            contact: contact,
+            email: email,
+            createdAt: new Date()
         })
        
         setSuccess(true)
@@ -89,7 +97,8 @@ const  addData2 = async()=>{
        
         await setDoc(newCityRef2,{
             name: "arrive",
-            contact: "arrive"
+            contact: "arrive",
+            createdAt: new Date()
         })
        
        
@@ -108,7 +117,7 @@ useEffect(()=>{
         if (contact !== '' && name !== '') {
             addData();
         }else{
-            alert('Please fill all the fields')
+            alert('សូមបញ្ចូលព័ត៌មានបានត្រឹមត្រូវ')
         }
     }
 
@@ -117,12 +126,13 @@ useEffect(()=>{
     //      : value4;
 
     return <div>
-        {success? <Thanks>Thanks for your interest</Thanks>:
+        {success? <Thanks>អរគុណសំរាប់ការចាប់អារម្មរបស់អ្នក់</Thanks>:
         <form onSubmit={handelSubmit}>
             <FormContainer>
-                    <TextInput onChange={(e)=>setName(e.target.value)} type="text" placeholder="Your Name" required />
-                        <TextInput onChange={(e)=>setContact(e.target.value)} type="text" placeholder="Your Email or Phone" />
-                    <SubmitBtn type="submit">Save</SubmitBtn>
+                    <TextInput onChange={(e)=>setName(e.target.value)} type="text" placeholder="ឈ្មោះរបស់អ្នក" required />
+                        <TextInput onChange={(e)=>setContact(e.target.value)} type="text" placeholder="លេខទូរស័ព្ធ" />
+                        <TextInput onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="អុីម៉ែលអ្នក" />
+                    <SubmitBtn type="submit">រក្សាទុក</SubmitBtn>
             </FormContainer>
         </form>
 }

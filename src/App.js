@@ -20,7 +20,6 @@ flex-direction: column;
 function App() {
   const [success, setSuccess] = useState(false);
 
-
   return (
     <TopSectionContainer>
       <TopSection success={success} setSuccess={setSuccess} />
