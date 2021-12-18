@@ -17,6 +17,5 @@ jobs:
         node-version: ${{matrix.node-version}}
     - run: 
         npm install 
-        mkdir vannaktesting
         npm run build 
 
