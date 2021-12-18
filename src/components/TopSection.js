@@ -35,7 +35,7 @@ const TopSection = ({success, setSuccess}) => {
         <CommingSoon>Comming Soon</CommingSoon>
         <Hypnosis color="green" style={{marginLeft:'auto',marginRight:'auto'}}  width="80px" height="80px" duration="2s"/>
         {!success &&<QuestionTitle>
-            បញ្ចូលអ៊ីមែល ឬលេខទូរស័ព្ធរបស់អ្នកដើម្បីទទួលបានការបញ្ជូនសាររបស់យើង​ ពេលយើងរួចរាល់។
+            យើងជួយសិស្ស IT ឱ្យសន្សំពេលវេលា ក្នុងការដោះស្រាយបញ្ហាកិច្ចការផ្ទះ និងការស្រាវជ្រាវរបស់ពួកគេ ដោយផ្តល់នូវគេហទំព័រដំណោះស្រាយកិច្ចការផ្ទះ។
         </QuestionTitle>
 }
    </>
