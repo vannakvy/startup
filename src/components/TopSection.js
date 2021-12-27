@@ -14,7 +14,7 @@ const BrandTitle = styled.h1`
 const CommingSoon = styled.h2`
     margin-top: 0px;
     font-size: 2.5rem;
-    color: #fff;
+    color:  #1ebd9a;
     font-weight: bold;
     font-family: 'ubuntu';
     color: purple;
@@ -23,7 +23,7 @@ const CommingSoon = styled.h2`
 const QuestionTitle = styled.h1`
     margin-top: 20px;
     font-size: 1rem;
-    color: purple;
+    color: #1ebd9a;
     text-transform: capitalize;
     font-family: 'Siemreap';
 `
